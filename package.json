@@ -1,23 +1,14 @@
 {
-  "name": "week-two",
+  "name": "spring-homes-cypress-tests",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "test:e2e": "npx cypress run",
-    "start": "node index.js"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "devDependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
-    "@faker-js/faker": "^9.6.0",
-    "cypress": "^14.2.1",
-    "cypress-cucumber-preprocessor": "^4.3.1"
-  },
-  "cypress-cucumber-preprocessor": {
-    "nonGlobalStepDefinations": true,
-    "stepDefinitions": "cypress/e2e/PageObjects/"
+    "cypress": "^15.1.0",
+    "esbuild": "^0.18.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.0.0",
+    "@badeball/cypress-cucumber-preprocessor": "^16.0.0"
   }
 }
