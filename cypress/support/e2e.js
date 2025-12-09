@@ -14,4 +14,19 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+import "./commands";
+
+// Import base URL from index
+const baseUrl = `http://ogc404gswg4oogcc0g088wsk.185.198.27.143.sslip.io`;
+
+// Global beforeEach for all tests
+beforeEach(() => {
+  const email = "stephen@almondcareers.com";
+  const password = "Test1234";
+
+  cy.visit(baseUrl);
+  cy.get('[data-testid="input-email"]').type(email);
+  cy.get('[data-testid="input-password"]').type(password);
+  cy.get('[data-testid="signin-submit-button"]').click();
+  cy.url().should("include", "/admin-dashboard");
+});
