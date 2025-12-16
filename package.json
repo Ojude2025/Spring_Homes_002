@@ -15,5 +15,8 @@
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false,
     "stepDefinitions": "cypress/e2e/PageObjects"
+  },
+  "dependencies": {
+    "it": "^0.2.2"
   }
 }
