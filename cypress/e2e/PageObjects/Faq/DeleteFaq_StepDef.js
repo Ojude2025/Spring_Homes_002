@@ -8,7 +8,7 @@ const faqDropdownMenu = (id) => `[data-testid="faq-dropdown-menu-${id}"]`;
 const deleteIcon = (id) => `[data-testid="faq-delete-${id}"]`;
 const faqRow = (id) => `[data-testid="faq-row-${id}"]`;
 
-Given("I am on the FAQ page", () => {
+Given("that I am on the FAQ page", () => {
   cy.url().should("include", "/settings/faq");
 });
 
