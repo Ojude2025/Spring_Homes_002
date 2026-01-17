@@ -1,6 +1,6 @@
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
 
-const id = 1; // Define the FAQ id to delete
+const id = 13; // Define the FAQ id to delete
 const faqQstn = (id) => `[data-testid="faq-question-${id}"]`;
 const faqOptions = (id) => `[data-testid="faq-more-options-${id}"]`;
 const faqAction = (id) => `[data-testid="faq-actions-${id}"]`;
@@ -9,6 +9,8 @@ const deleteIcon = (id) => `[data-testid="faq-delete-${id}"]`;
 const faqRow = (id) => `[data-testid="faq-row-${id}"]`;
 
 Given("that I am on the FAQ page", () => {
+  cy.get('[data-testid="option-icon-settings"]').click();
+  cy.get('[data-testid="submenu-faq"]').click();
   cy.url().should("include", "/settings/faq");
 });
 
@@ -18,10 +20,9 @@ And("have selected a content", () => {
 });
 
 When("I click on delete button", () => {
-  cy.get(faqOptions(id));
+  cy.get(faqOptions(id)).click();
   cy.get(faqDropdownMenu(id));
   cy.get(deleteIcon(id)).first().click();
-  cy.url().should("include", "/settings/faq/edit-faq/{id}");
 });
 
 Then("I can successfully delete the content", () => {
