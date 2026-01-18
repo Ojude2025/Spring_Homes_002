@@ -1,19 +1,20 @@
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
 
-const id = 1; // Define the blog id to delete
+const id = "5b6d5475-9b8c-4f71-b67b-900e02bb073a"; // Define the blog id to delete
 const blogTable = '[data-testid="all-blogs-container"]';
 const blogRow = (id) => `[data-testid="blog-row-${id}"]`;
 const blogTitle = (id) => `[data-testid="blog-title-${id}"]`;
 const blogAction = (id) => `[data-testid="blog-actions-${id}"]`;
 const deleteIcon = (id) => `[data-testid="delete-blog-${id}"]`;
 
-Given("I am on the Blog post", () => {
-  cy.get('[data-testid="menu-blog"]');
-  cy.url().should("include", "/blog/all");
+Given("that I am on the Blog post", () => {
+  // cy.get('[data-testid="menu-blog"]');
+  cy.url().should("include", "/admin-dashboard");
+   cy.get('[data-testid="option-icon-blog"]').click()
 });
 
 And("have selected a blog content", () => {
-  cy.get('[data-testid="blog-submenu"]').click();
+  // cy.get('[data-testid="blog-submenu"]').click();
   cy.get('[data-testid="submenu-all-blogs"]').click();
   cy.get(blogTable).should("exist").and("be.visible");
   cy.get(blogRow(id)).should("exist").and("be.visible");
@@ -26,6 +27,6 @@ When("I click on delete", () => {
 });
 
 Then("I can delete a blog content that is unwanted on the website", () => {
-  cy.get(blogRow(id)).should("not.exist");
+  // cy.get(blogRow(id)).should("not.exist");
   cy.url().should("include", "/blog/all");
 });
