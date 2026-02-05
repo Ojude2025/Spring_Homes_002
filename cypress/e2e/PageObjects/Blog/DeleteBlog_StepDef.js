@@ -27,12 +27,6 @@ And("have selected a blog content", () => {
     });
 });
 
-//   cy.get(blogTable).should("exist").and("be.visible");
-//   cy.get(blogRow(id)).should("exist").and("be.visible");
-//   cy.get(blogTitle(id)).click();
-//   cy.get(blogAction(id)).should("exist").and("be.visible");
-// });
-
 When("I click on delete", () => {
   // Click on the delete blog button
   cy.get(deleteIcon(blogId)).click();
