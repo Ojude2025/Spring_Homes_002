@@ -1,3 +1,7 @@
 /node_modules
 
 INTERVIEW_QUESTIONS.md
+
+node_modules/
+cypress/screenshots/
+cypress/videos/
